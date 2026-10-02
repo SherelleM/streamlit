@@ -67,35 +67,35 @@ else:
 
 st.write("### Key Performance Metrics")
     
-    # Calculations for selected items
-    selected_sales = filtered_df["Sales"].sum()
-    selected_profit = filtered_df["Profit"].sum()
-    selected_margin = (selected_profit / selected_sales * 100) if selected_sales != 0 else 0.0
+# Calculations for selected items
+selected_sales = filtered_df["Sales"].sum()
+selected_profit = filtered_df["Profit"].sum()
+selected_margin = (selected_profit / selected_sales * 100) if selected_sales != 0 else 0.0
 
-    # Overall baseline calculations (all products across all categories)
-    total_company_sales = df["Sales"].sum()
-    total_company_profit = df["Profit"].sum()
-    overall_company_margin = (
-        (total_company_profit / total_company_sales * 100) 
-        if total_company_sales != 0 else 0.0
-    )
+# Overall baseline calculations (all products across all categories)
+total_company_sales = df["Sales"].sum()
+total_company_profit = df["Profit"].sum()
+overall_company_margin = (
+    (total_company_profit / total_company_sales * 100) 
+    if total_company_sales != 0 else 0.0
+)
 
-    # Difference between selected margin and overall company margin
-    margin_delta = selected_margin - overall_company_margin
+# Difference between selected margin and overall company margin
+margin_delta = selected_margin - overall_company_margin
 
-    # Display using 3 columns
-    col1, col2, col3 = st.columns(3)
-    
-    col1.metric(
-        label="Total Sales", 
-        value=f"${selected_sales:,.2f}"
-    )
-    col2.metric(
-        label="Total Profit", 
-        value=f"${selected_profit:,.2f}"
-    )
-    col3.metric(
-        label="Overall Profit Margin", 
-        value=f"{selected_margin:.2f}%", 
-        delta=f"{margin_delta:+.2f}%"
-    )
+# Display using 3 columns
+col1, col2, col3 = st.columns(3)
+
+col1.metric(
+    label="Total Sales", 
+    value=f"${selected_sales:,.2f}"
+)
+col2.metric(
+    label="Total Profit", 
+    value=f"${selected_profit:,.2f}"
+)
+col3.metric(
+    label="Overall Profit Margin", 
+    value=f"{selected_margin:.2f}%", 
+    delta=f"{margin_delta:+.2f}%"
+)
