@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import math
 
 st.title("Data App Assignment, due on Oct 6th")
+st.write("### Sherelle McDaniel")
 
 st.write("### Input Data and Examples")
 df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
