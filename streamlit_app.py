@@ -55,16 +55,15 @@ filtered_df = df[
 if not selected_subcategories:
     st.warning("Please select at least one sub-category to view data.")
 else:
-    
-st.write("### Monthly Sales for Selected Sub-Categories")
+    st.write("### Monthly Sales for Selected Sub-Categories")
   
-  # Aggregating monthly sales
-  filtered_sales_by_month = (
+    # Aggregating monthly sales
+    filtered_sales_by_month = (
       filtered_df.filter(items=["Sales"])
       .groupby(pd.Grouper(freq="ME"))
       .sum()
-  )
-  st.line_chart(filtered_sales_by_month, y="Sales")
+    )
+    st.line_chart(filtered_sales_by_month, y="Sales")
 
 st.write("### Key Performance Metrics")
     
