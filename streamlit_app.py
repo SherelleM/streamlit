@@ -29,7 +29,7 @@ st.dataframe(sales_by_month)
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
 
-st.write("## Your additions")
+st.write("## My Additions")
 # Handle column naming variations defensively ('Sub_Category' vs 'Sub-Category')
 subcat_col = "Sub_Category" if "Sub_Category" in df.columns else "Sub-Category"
 
